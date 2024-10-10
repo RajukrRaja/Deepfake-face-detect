@@ -1,0 +1,139 @@
+/* CSS Variables for easy customization */
+:root {
+  --navbar-bg: #1f2937; /* Dark background */
+  --navbar-hover-bg: rgba(75, 85, 99, 0.3); /* Slight background on hover */
+  --navbar-text: #ffffff; /* Text color */
+  --navbar-hover-text: #4ade80; /* Hover text color */
+  --mobile-menu-bg: #111827; /* Darker background for mobile menu */
+  --mobile-menu-hover-bg: #4ade80; /* Green background on mobile hover */
+}
+
+/* General navbar styling */
+nav {
+  background-color: var(--navbar-bg);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Navbar logo styling */
+nav .logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--navbar-text);
+  cursor: pointer;
+  letter-spacing: 0.05rem;
+  transition: color 0.3s ease;
+}
+
+nav .logo:hover {
+  color: var(--navbar-hover-text);
+}
+
+/* Navbar links - desktop view */
+nav .navbar-links a {
+  color: var(--navbar-text);
+  font-weight: 500;
+  padding: 0.5rem 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+nav .navbar-links a:hover {
+  color: var(--navbar-hover-text);
+  background-color: var(--navbar-hover-bg);
+  border-radius: 0.375rem;
+}
+
+/* Navbar for mobile view */
+nav .hamburger {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+nav .hamburger:hover {
+  transform: scale(1.1);
+}
+
+/* Mobile dropdown menu */
+.mobile-menu {
+  background-color: var(--mobile-menu-bg);
+  position: absolute;
+  top: 4rem;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border-top: 1px solid #374151;
+  padding-bottom: 1rem; /* Add bottom padding */
+}
+
+.mobile-menu a {
+  display: block;
+  padding: 1rem;
+  color: var(--navbar-text);
+  text-align: center;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.mobile-menu a:hover {
+  background-color: var(--mobile-menu-hover-bg);
+  color: var(--mobile-menu-bg);
+}
+
+/* Mobile menu smooth dropdown effect */
+.mobile-menu {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+}
+
+.mobile-menu.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Active link styling (optional) */
+nav .active-link {
+  color: var(--navbar-hover-text);
+  font-weight: 700;
+  border-bottom: 2px solid var(--navbar-hover-text);
+}
+
+/* Responsive navbar behavior */
+@media (max-width: 768px) {
+  nav .navbar-links {
+    display: none; /* Hide desktop links on mobile */
+  }
+
+  nav .hamburger {
+    display: block; /* Show hamburger menu on mobile */
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-menu {
+    display: none; /* Hide mobile menu on larger screens */
+  }
+
+  nav .hamburger {
+    display: none; /* Hide hamburger menu on larger screens */
+  }
+}
+
+/* Smooth transitions for background on scroll (optional) */
+nav.scrolled {
+  background-color: #111827;
+}
+
+/* Focus styles for accessibility */
+nav a:focus {
+  outline: 2px solid var(--navbar-hover-text);
+  outline-offset: 2px;
+}

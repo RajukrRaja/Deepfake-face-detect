@@ -1,0 +1,125 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f6f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container Styling */
+.upload-container {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    padding: 40px;
+    width: 400px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 22px;
+    margin-bottom: 30px;
+}
+
+/* Custom File Input Styling */
+.custom-file-input {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 5px;
+    display: inline-block;
+    cursor: pointer;
+    font-weight: 500;
+    margin-bottom: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+}
+
+.custom-file-input:hover {
+    background-color: #0056b3;
+}
+
+.file-input {
+    display: none;
+}
+
+/* Upload Button */
+.upload-btn {
+    font-size: 16px;
+    background-color: #28a745;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.upload-btn:disabled {
+    background-color: #c3e6cb;
+    cursor: not-allowed;
+}
+
+.upload-btn:hover {
+    background-color: #218838;
+}
+
+/* Progress Bar */
+.progress-bar {
+    margin-top: 20px;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    height: 20px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.progress {
+    background-color: #007bff;
+    height: 100%;
+    color: white;
+    text-align: center;
+    line-height: 20px;
+    transition: width 0.4s ease;
+}
+
+/* Success & Error Messages */
+.message {
+    font-size: 16px;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.success {
+    background-color: #28a745;
+    color: white;
+}
+
+.error {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* Error Message Styling */
+.error {
+    margin-top: 20px;
+    background-color: #dc3545;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .upload-container {
+        width: 90%;
+    }
+}
+
