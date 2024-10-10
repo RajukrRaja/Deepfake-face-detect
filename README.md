@@ -33,9 +33,9 @@ Ensure you have the following installed:
    cd path/to/your/directory
 Clone the repository:
 
-bash
-Copy code
+ ```bash
 git clone https://github.com/RajukrRaja/Deepfake-face-detect.git
+
 Navigate into the cloned directory:
 
 bash
