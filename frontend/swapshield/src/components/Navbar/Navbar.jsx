@@ -1,73 +1,127 @@
-// src/components/NavigationBar.js
+import React, { useState, useEffect } from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import Sidebar from '../Sidebar/Sidebar';
+import './Navbar.css';
+import { FaUserCircle, FaSearch, FaSun, FaMoon, FaBars, FaTimes } from 'react-icons/fa';
+import { BsFillShieldLockFill } from 'react-icons/bs';
 
-import React, { useState } from 'react';
-import { Navbar, Nav, NavDropdown, Form, FormControl, Button } from 'react-bootstrap';
-import { FaBell, FaUserCircle, FaHome, FaInfoCircle, FaRegLightbulb, FaQuestionCircle, FaUpload } from 'react-icons/fa';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './Navbar.css'; // Import the CSS file
+const Navbar = () => {
+  const [progress, setProgress] = useState(0);
+  const [darkMode, setDarkMode] = useState(false);
+  const [isSearching, setIsSearching] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [sidebarVisible, setSidebarVisible] = useState(false);
 
-const NavigationBar = () => {
-  const [searchQuery, setSearchQuery] = useState('');
+  // Handle Progress Bar Animation
+  useEffect(() => {
+    setProgress(isSearching ? 100 : 0);
+  }, [isSearching]);
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-    console.log('Search Query:', searchQuery);
-    setSearchQuery('');
+  // Toggle Dark Mode
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+    document.body.classList.toggle('dark-mode', !darkMode);
+  };
+
+  // Toggle Dropdown
+  const toggleDropdown = () => {
+    setDropdownOpen(!dropdownOpen);
+  };
+
+  // Toggle Sidebar
+  const toggleSidebar = () => {
+    setSidebarVisible(!sidebarVisible);
   };
 
   return (
-    <Navbar className="yellow-navbar" expand="lg">
-      <Navbar.Brand href="/">Deepfake Detector</Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="me-auto">
-          <Nav.Link href="/" className="nav-link">
-            <FaHome /> Home
-          </Nav.Link>
-          <Nav.Link href="/about" className="nav-link">
-            <FaInfoCircle /> About
-          </Nav.Link>
-          <Nav.Link href="/features" className="nav-link">
-            <FaRegLightbulb /> Features
-          </Nav.Link>
-          <Nav.Link href="/faq" className="nav-link">
-            <FaQuestionCircle /> FAQ
-          </Nav.Link>
-          <NavDropdown title="Analysis" id="basic-nav-dropdown" className="nav-link">
-            <NavDropdown.Item href="/upload">
-              <FaUpload /> Upload Video
-            </NavDropdown.Item>
-            <NavDropdown.Item href="/results">
-              <FaRegLightbulb /> View Results
-            </NavDropdown.Item>
-            <NavDropdown.Item href="/history">
-              <FaRegLightbulb /> History
-            </NavDropdown.Item>
-          </NavDropdown>
-        </Nav>
-        <Form className="d-flex" onSubmit={handleSearch}>
-          <FormControl
-            type="search"
-            placeholder="Search"
-            className="me-2"
-            aria-label="Search"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-          />
-          <Button variant="outline-success" type="submit">Search</Button>
-        </Form>
-        <Nav className="ms-auto">
-         
-          <NavDropdown title={<FaUserCircle />} id="basic-nav-dropdown">
-            <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
-            <NavDropdown.Item href="/settings">Settings</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="/logout">Logout</NavDropdown.Item>
-          </NavDropdown>
-        </Nav>
-      </Navbar.Collapse>
-    </Navbar>
+    <nav className={`navbar ${darkMode ? 'navbar--dark' : ''}`}>
+      {/* Logo */}
+      <div className="navbar__logo">
+        <Link to="/" onClick={() => setSidebarVisible(false)}>
+          <BsFillShieldLockFill className="navbar__logoIcon" /> Swapshield
+        </Link>
+      </div>
+
+      {/* Desktop Menu */}
+      <ul className="navbar__menu">
+        <li>
+          <NavLink to="/features" activeClassName="active">
+            Features
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/pricing" activeClassName="active">
+            Pricing
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/about" activeClassName="active">
+            About
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/contact" activeClassName="active">
+            Contact
+          </NavLink>
+        </li>
+      </ul>
+
+      {/* Search Bar */}
+      <div className="navbar__search">
+        <input
+          type="text"
+          className={`navbar__searchInput ${isSearching ? 'active' : ''}`}
+          placeholder="Search AI tools, articles..."
+          onFocus={() => setIsSearching(true)}
+          onBlur={() => setIsSearching(false)}
+          aria-label="Search"
+        />
+        <FaSearch className="navbar__searchIcon" />
+      </div>
+
+      {/* Progress Bar */}
+      <ProgressBar progress={progress} />
+
+      {/* Dark Mode Toggle */}
+      <div className="navbar__darkModeToggle" onClick={toggleDarkMode} aria-label="Toggle dark mode">
+        {darkMode ? <FaSun /> : <FaMoon />}
+      </div>
+
+      {/* Profile / Login / Sign-Up */}
+      <div className="navbar__auth">
+        <Link to="/login" className="navbar__loginBtn">Login</Link>
+        <Link to="/signup" className="navbar__signupBtn">Sign Up</Link>
+        <div className="navbar__profileIcon" onClick={toggleDropdown} aria-label="Toggle profile dropdown">
+          <FaUserCircle />
+          {dropdownOpen && <ProfileDropdown />}
+        </div>
+      </div>
+
+      {/* Mobile Menu Toggle */}
+      <div className="navbar__mobileMenuIcon" onClick={toggleSidebar} aria-label="Toggle sidebar">
+        {sidebarVisible ? <FaTimes /> : <FaBars />}
+      </div>
+
+      {/* Sidebar Component */}
+      <Sidebar isVisible={sidebarVisible} toggleSidebar={toggleSidebar} />
+    </nav>
   );
 };
 
-export default NavigationBar;
+const ProgressBar = ({ progress }) => (
+  <div className="navbar__progressContainer">
+    <div className="navbar__progressBar" style={{ width: `${progress}%`, transition: 'width 0.3s ease' }} />
+  </div>
+);
+
+const ProfileDropdown = () => (
+  <div className="navbar__profileDropdown">
+    <ul>
+      <li><Link to="/profile">My Profile</Link></li>
+      <li><Link to="/settings">Settings</Link></li>
+      <li><Link to="/logout">Logout</Link></li>
+    </ul>
+  </div>
+);
+
+export default Navbar;
