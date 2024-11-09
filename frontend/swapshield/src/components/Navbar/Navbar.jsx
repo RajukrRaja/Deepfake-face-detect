@@ -36,11 +36,12 @@ const Navbar = () => {
   return (
     <nav className={`navbar ${darkMode ? 'navbar--dark' : ''}`}>
       {/* Logo */}
-      <div className="navbar__logo">
-        <Link to="/" onClick={() => setSidebarVisible(false)}>
-          <BsFillShieldLockFill className="navbar__logoIcon" /> Swapshield
-        </Link>
-      </div>
+<img 
+  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRJ1dZdRv2Yy7QH5YaFW3rXOv_OWE71eHbRw&s" 
+  alt="Logo"
+  style={{ width: '50px', height: '50px', objectFit: 'contain' }}
+/>
+
 
       {/* Desktop Menu */}
       <ul className="navbar__menu">
@@ -90,7 +91,7 @@ const Navbar = () => {
       {/* Profile / Login / Sign-Up */}
       <div className="navbar__auth">
         <Link to="/login" className="navbar__loginBtn">Login</Link>
-        <Link to="/signup" className="navbar__signupBtn">Sign Up</Link>
+        <Link to="/Register" className="navbar__signupBtn">Sign Up</Link>
         <div className="navbar__profileIcon" onClick={toggleDropdown} aria-label="Toggle profile dropdown">
           <FaUserCircle />
           {dropdownOpen && <ProfileDropdown />}
