@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Deepfake-face-detect/static/css/main.afa1d0fb.css",
-    "main.js": "/Deepfake-face-detect/static/js/main.b417639b.js",
+    "main.css": "/Deepfake-face-detect/static/css/main.a3c75e66.css",
+    "main.js": "/Deepfake-face-detect/static/js/main.d5e7e25f.js",
     "static/js/453.8e860bd3.chunk.js": "/Deepfake-face-detect/static/js/453.8e860bd3.chunk.js",
     "index.html": "/Deepfake-face-detect/index.html",
-    "main.afa1d0fb.css.map": "/Deepfake-face-detect/static/css/main.afa1d0fb.css.map",
-    "main.b417639b.js.map": "/Deepfake-face-detect/static/js/main.b417639b.js.map",
+    "main.a3c75e66.css.map": "/Deepfake-face-detect/static/css/main.a3c75e66.css.map",
+    "main.d5e7e25f.js.map": "/Deepfake-face-detect/static/js/main.d5e7e25f.js.map",
     "453.8e860bd3.chunk.js.map": "/Deepfake-face-detect/static/js/453.8e860bd3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.afa1d0fb.css",
-    "static/js/main.b417639b.js"
+    "static/css/main.a3c75e66.css",
+    "static/js/main.d5e7e25f.js"
   ]
 }
