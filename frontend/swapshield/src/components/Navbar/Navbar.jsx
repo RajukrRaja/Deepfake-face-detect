@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import Sidebar from '../Sidebar/Sidebar';
+import User from '../user/user';
 import './Navbar.css';
 import { FaUserCircle, FaSearch, FaSun, FaMoon, FaBars, FaTimes } from 'react-icons/fa';
 import { BsFillShieldLockFill } from 'react-icons/bs';
@@ -121,7 +122,7 @@ const ProgressBar = ({ progress }) => (
 const ProfileDropdown = () => (
   <div className="navbar__profileDropdown">
     <ul>
-      <li><Link to="/profile">My Profile</Link></li>
+      <li><Link to="/user">My Profile</Link></li>
       <li><Link to="/settings">Settings</Link></li>
       <li><Link to="/logout">Logout</Link></li>
     </ul>

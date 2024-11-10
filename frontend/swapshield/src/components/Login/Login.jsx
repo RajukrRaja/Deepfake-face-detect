@@ -39,7 +39,12 @@ const Login = () => {
 
       if (response.ok) {
         setError('');
-        navigate('/dashboard');
+        
+        // Save token to local storage
+        localStorage.setItem('token', data.token);
+
+        // Navigate to the user profile page
+        navigate('/user');
       } else {
         setError(data.message || 'Login failed. Please check your credentials.');
       }

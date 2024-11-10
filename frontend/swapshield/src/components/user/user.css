@@ -1,0 +1,121 @@
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  
+  }
+  
+  .profile-card {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    width: 100%;
+    height: 80%;
+    text-align: center;
+    position: relative;
+  }
+  
+  .profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .profile-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-connect {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .connect-btn, .message-btn {
+    background: none;
+    border: none;
+    color: #ff6a95;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 12px;
+  }
+  
+  .profile-details {
+    margin: 20px 0;
+  }
+  
+  .profile-name {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .profile-location, .profile-job, .profile-institution {
+    color: #888;
+    font-size: 0.9em;
+  }
+  
+  .profile-stats {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    margin: 20px 0;
+  }
+  
+  .stat-item {
+    text-align: center;
+  }
+  
+  .stat-number {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .stat-label {
+    font-size: 0.8em;
+    color: #888;
+  }
+  
+  .show-more-btn {
+    background: #ff6a95;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 0.9em;
+    margin-top: 20px;
+  }
+  .profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+  
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .profile-card {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    width: 90%;
+    height: 90%;
+    text-align: center;
+    overflow-y: auto;
+    max-width: 1000px; /* Optional, to prevent it from stretching too wide */
+  }
+  
