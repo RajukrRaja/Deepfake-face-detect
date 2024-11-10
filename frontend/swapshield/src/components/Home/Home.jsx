@@ -2,6 +2,8 @@ import React from 'react';
 import './Home.css';
 import { FaShieldAlt, FaClock, FaUserAlt } from 'react-icons/fa';
 import { FiMail, FiTwitter, FiFacebook, FiLinkedin } from 'react-icons/fi';
+import Register from '../Register/Register';
+import { Link, NavLink } from 'react-router-dom';
 
 const Home = () => {
   return (
@@ -10,7 +12,9 @@ const Home = () => {
       <header className="hero">
         <h1>Deepfake Face Detect</h1>
         <p className="tagline">Detect and prevent deepfake images with cutting-edge technology.</p>
+        <Link to="/register">
         <button className="cta-button">Sign Up Now</button>
+      </Link>
       </header>
 
       {/* About Section */}

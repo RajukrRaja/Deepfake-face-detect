@@ -36,11 +36,14 @@ const Navbar = () => {
   return (
     <nav className={`navbar ${darkMode ? 'navbar--dark' : ''}`}>
       {/* Logo */}
-<img 
-  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRJ1dZdRv2Yy7QH5YaFW3rXOv_OWE71eHbRw&s" 
-  alt="Logo"
-  style={{ width: '50px', height: '50px', objectFit: 'contain' }}
-/>
+      <Link to="/">
+        <img 
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRJ1dZdRv2Yy7QH5YaFW3rXOv_OWE71eHbRw&s" 
+          alt="Logo"
+          style={{ width: '50px', height: '50px', objectFit: 'contain' }}
+        />
+      </Link>
+    
 
 
       {/* Desktop Menu */}
