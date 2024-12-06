@@ -4,8 +4,12 @@ import Navbar from './components/Navbar/Navbar';
 import Home from './components/Home/Home';
 import Register from './components/Register/Register';
 import Login from './components/Login/Login';
-import Price from './components/pricing/price'; // Fixed this import to match the correct component name
 import Detect from './components/Detect/Detect';
+import User from './components/user/user';
+import Price from './components/Pricing/Price';
+import About from './components/About/About';
+import Contact from './components/Contact/Contact';
+import Features from './components/Features/Feature';
 // Import other components for additional routes as needed
 
 function App() {
@@ -18,7 +22,11 @@ function App() {
           <Route path="/Register" element={<Register />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/Detect" element={<Detect />} />
-          <Route path="/Price" element={<Price/>} /> {/* Updated the component name here */}
+          <Route path="/User" element={<User />} />
+          <Route path="/pricing" element={<Price />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/features" element={<Features />} />
         </Routes>
       </div>
     </Router>

@@ -41,35 +41,35 @@ const Navbar = () => {
         <img 
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRJ1dZdRv2Yy7QH5YaFW3rXOv_OWE71eHbRw&s" 
           alt="Logo"
-          style={{ width: '50px', height: '50px', objectFit: 'contain' }}
+          style={{ width: '50px', height: '50px',  objectFit: 'contain' }}
         />
       </Link>
     
 
 
-      {/* Desktop Menu */}
-      <ul className="navbar__menu">
-        <li>
-          <NavLink to="/features" activeClassName="active">
-            Features
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/price" activeClassName="active">
-            Pricing
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/about" activeClassName="active">
-            About
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/contact" activeClassName="active">
-            Contact
-          </NavLink>
-        </li>
-      </ul>
+    {/* Desktop Menu */}
+<ul className="navbar__menu">
+  <li>
+    <NavLink to="/features" activeclassname="active">
+      Features
+    </NavLink>
+  </li>
+  <li>
+    <NavLink to="/pricing" activeclassname="active">
+      Pricing
+    </NavLink>
+  </li>
+  <li>
+    <NavLink to="/about" activeclassname="active">
+      About
+    </NavLink>
+  </li>
+  <li>
+    <NavLink to="/contact" activeclassname="active">
+      Contact
+    </NavLink>
+  </li>
+</ul>
 
       {/* Search Bar */}
       <div className="navbar__search">
