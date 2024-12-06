@@ -44,7 +44,7 @@ const Login = () => {
         localStorage.setItem('token', data.token);
 
         // Navigate to the user profile page
-        navigate('/user');
+        navigate('/Detect');
       } else {
         setError(data.message || 'Login failed. Please check your credentials.');
       }

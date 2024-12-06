@@ -17,6 +17,7 @@ const Detect = () => {
   const maxSize = 10 * 1024 * 1024; // 10 MB
   const serverUrl = 'http://localhost:5000'; // Your backend URL
 
+  // Function to handle file upload
   const handleFileUpload = async (file, type) => {
     if (!file) return;
 
@@ -27,12 +28,14 @@ const Detect = () => {
 
     const { type: fileType, size } = file;
 
+    // Check if the file type is allowed
     if (!allowedTypes[type].includes(fileType)) {
       setError(`Unsupported ${type} file type`);
       setLoading(false);
       return;
     }
 
+    // Check if the file size exceeds the limit
     if (size > maxSize) {
       setError('File size exceeds the limit (10MB)');
       setLoading(false);
@@ -70,6 +73,7 @@ const Detect = () => {
     }
   };
 
+  // Clean up the object URL when the component is unmounted
   useEffect(() => {
     return () => {
       if (fileURL) {
@@ -137,16 +141,17 @@ const Detect = () => {
 
       {fileURL && (
         <div className="preview-container">
-          {file && file.type.startsWith('video') && (
-            <video controls src={fileURL} className="media-preview" />
-          )}
-          {file && file.type.startsWith('image') && (
-            <img src={fileURL} alt="Preview" className="media-preview" />
-          )}
-          {file && file.type.startsWith('audio') && (
-            <audio controls src={fileURL} className="media-preview" />
-          )}
-          {/* Detect Button Below the Preview */}
+          <div className="media-preview-wrapper">
+            {file && file.type.startsWith('video') && (
+              <video controls src={fileURL} className="media-preview" />
+            )}
+            {file && file.type.startsWith('image') && (
+              <img src={fileURL} alt="Preview" className="media-preview" />
+            )}
+            {file && file.type.startsWith('audio') && (
+              <audio controls src={fileURL} className="media-preview" />
+            )}
+          </div>
           <button className="detect-button">Detect</button>
         </div>
       )}

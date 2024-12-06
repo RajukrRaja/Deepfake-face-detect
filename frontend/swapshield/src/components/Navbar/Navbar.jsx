@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import Sidebar from '../Sidebar/Sidebar';
-import User from '../user/user';
+
 import './Navbar.css';
 import { FaUserCircle, FaSearch, FaSun, FaMoon, FaBars, FaTimes } from 'react-icons/fa';
 import { BsFillShieldLockFill } from 'react-icons/bs';
@@ -55,7 +55,7 @@ const Navbar = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/pricing" activeClassName="active">
+          <NavLink to="/price" activeClassName="active">
             Pricing
           </NavLink>
         </li>

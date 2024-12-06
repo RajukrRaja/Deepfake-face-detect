@@ -4,9 +4,8 @@ import Navbar from './components/Navbar/Navbar';
 import Home from './components/Home/Home';
 import Register from './components/Register/Register';
 import Login from './components/Login/Login';
-import user from './components/user/user'
+import Price from './components/pricing/price'; // Fixed this import to match the correct component name
 import Detect from './components/Detect/Detect';
-import User from './components/user/user';
 // Import other components for additional routes as needed
 
 function App() {
@@ -19,8 +18,7 @@ function App() {
           <Route path="/Register" element={<Register />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/Detect" element={<Detect />} />
-          <Route path="/User" element={<User/>} />
-       
+          <Route path="/Price" element={<Price/>} /> {/* Updated the component name here */}
         </Routes>
       </div>
     </Router>
