@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import Sidebar from '../Sidebar/Sidebar';
-import User from '../user/user';
+
 import './Navbar.css';
 import { FaUserCircle, FaSearch, FaSun, FaMoon, FaBars, FaTimes } from 'react-icons/fa';
 import { BsFillShieldLockFill } from 'react-icons/bs';
@@ -41,7 +41,7 @@ const Navbar = () => {
         <img 
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRJ1dZdRv2Yy7QH5YaFW3rXOv_OWE71eHbRw&s" 
           alt="Logo"
-          style={{ width: '50px', height: '50px', objectFit: 'contain' }}
+          style={{ width: '50px', height: '50px',  objectFit: 'contain' }}
         />
       </Link>
     
@@ -50,22 +50,22 @@ const Navbar = () => {
       {/* Desktop Menu */}
       <ul className="navbar__menu">
         <li>
-          <NavLink to="/features" activeClassName="active">
+          <NavLink to="/features" activeclassname="active">
             Features
           </NavLink>
         </li>
         <li>
-          <NavLink to="/pricing" activeClassName="active">
+          <NavLink to="/pricing" activeclassname="active">
             Pricing
           </NavLink>
         </li>
         <li>
-          <NavLink to="/about" activeClassName="active">
+          <NavLink to="/about" activeclassname="active">
             About
           </NavLink>
         </li>
         <li>
-          <NavLink to="/contact" activeClassName="active">
+          <NavLink to="/contact" activeclassname="active">
             Contact
           </NavLink>
         </li>

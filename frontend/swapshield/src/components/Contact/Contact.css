@@ -1,0 +1,100 @@
+/* Contact Page Styles */
+
+.contact-container {
+  background: url('https://img.freepik.com/free-photo/vintage-pink-telephone-assortment_23-2148913963.jpg?t=st=1733513790~exp=1733517390~hmac=c53c9a70456c3a5f9f50c866b9117d7db37997a0580b60dddb9de44aa7a0fa39&w=826') no-repeat center center/cover; 
+  min-height: 100vh;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+}
+
+.contact-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay for better text contrast */
+  z-index: 1;
+}
+
+.form-wrapper {
+  background: rgba(184, 225, 235, 0.9);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 500px;
+  z-index: 2;
+  text-align: center;
+}
+
+.form-title {
+  font-size: 2rem;
+  color: #0077b6;
+  margin-bottom: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  text-align: left;
+}
+
+.form-label {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: #0056a3;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: #0077b6;
+  box-shadow: 0 0 5px rgba(0, 119, 182, 0.5);
+}
+
+.form-textarea {
+  resize: none;
+}
+
+.form-button {
+  background: #0077b6;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.form-button:hover {
+  background: #0056a3;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .form-wrapper {
+    padding: 20px;
+  }
+}

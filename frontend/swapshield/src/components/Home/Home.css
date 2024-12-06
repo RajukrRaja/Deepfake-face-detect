@@ -35,6 +35,8 @@ button {
 }
 
 /* Hero Section */
+
+
 .hero {
   position: relative;
   height: 100vh;
@@ -42,10 +44,19 @@ button {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(120deg, rgba(0, 180, 216, 0.8), rgba(26, 26, 46, 0.8));
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6)
+    ), 
+    url("https://cdn.leonardo.ai/users/f66b50f3-6442-4205-a84f-3ee11453d2fb/generations/c1773880-efb3-439b-a08b-581659a70de1/Leonardo_Phoenix_a_blurred_background_image_with_a_subtle_grad_0.jpg?w=512") no-repeat center center/cover;
   text-align: center;
   color: white;
+  font-family: 'Arial', sans-serif; /* Retains clear font */
+  font-weight: bold;
+  padding: 20px;
 }
+
+
 
 .hero h1 {
   font-size: 4rem;
@@ -79,11 +90,11 @@ button {
 @keyframes fadeIn {
   0% {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateX(20px);
   }
   100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
   }
 }
 
@@ -162,6 +173,78 @@ button {
   color: #666;
   line-height: 1.6;
 }
+
+/* Testimonials Section */
+.testimonials {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.testimonials h2 {
+  font-size: 2.5rem;
+  color: #00b4d8;
+  margin-bottom: 30px;
+  text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.testimonial-item {
+  max-width: 350px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  position: relative;
+}
+
+.testimonial-item:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial-item::before {
+  content: "“";
+  font-size: 3rem;
+  color: #2d89ff;
+  position: absolute;
+  top: -20px;
+  left: 10px;
+}
+
+.testimonial-item p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.testimonial-item h4 {
+  font-size: 1.1rem;
+  color: #2d89ff;
+  text-align: right;
+}
+
+/* Customer Image */
+.customer-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #2d89ff;
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  background-color: #fff; /* To give it a clean circular border */
+}
+
 
 /* Contact Section */
 .contact {
@@ -383,6 +466,98 @@ footer .social-icons a:hover {
     font-size: 1.8rem;
   }
 }
+/* Footer Section */
+.footer {
+  background: linear-gradient(120deg, rgba(26, 26, 46, 1), rgba(0, 180, 216, 1));
+  color: white;
+  padding: 50px 20px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.footer-about,
+.footer-contact,
+.footer-newsletter {
+  flex: 1;
+  min-width: 280px;
+}
+
+.footer h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  color: #00b4d8;
+}
+
+.footer p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #d0d0d0;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.social-icon {
+  font-size: 1.5rem;
+  color: white;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #00b4d8;
+  transform: scale(1.2);
+}
+
+.footer-newsletter .newsletter-form {
+  display: flex;
+  margin-top: 10px;
+}
+
+.newsletter-form input {
+  padding: 10px;
+  flex: 1;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  font-size: 1rem;
+}
+
+.newsletter-form button {
+  padding: 10px 20px;
+  background: #00b4d8;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.newsletter-form button:hover {
+  background: #0077b6;
+  transform: scale(1.05);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #d0d0d0;
+  border-top: 1px solid #444;
+  padding-top: 10px;
+}
+
 
 /* Mobile Header Styles */
 .mobile-header {
