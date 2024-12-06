@@ -47,29 +47,29 @@ const Navbar = () => {
     
 
 
-      {/* Desktop Menu */}
-      <ul className="navbar__menu">
-        <li>
-          <NavLink to="/features" activeclassname="active">
-            Features
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/pricing" activeclassname="active">
-            Pricing
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/about" activeclassname="active">
-            About
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/contact" activeclassname="active">
-            Contact
-          </NavLink>
-        </li>
-      </ul>
+    {/* Desktop Menu */}
+<ul className="navbar__menu">
+  <li>
+    <NavLink to="/features" activeclassname="active">
+      Features
+    </NavLink>
+  </li>
+  <li>
+    <NavLink to="/pricing" activeclassname="active">
+      Pricing
+    </NavLink>
+  </li>
+  <li>
+    <NavLink to="/about" activeclassname="active">
+      About
+    </NavLink>
+  </li>
+  <li>
+    <NavLink to="/contact" activeclassname="active">
+      Contact
+    </NavLink>
+  </li>
+</ul>
 
       {/* Search Bar */}
       <div className="navbar__search">
